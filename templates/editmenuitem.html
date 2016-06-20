@@ -1,7 +1,47 @@
 <html>
-    <head><title>Edit {{}} in {{}}
+    <head><title>Edit {{item.name}}</title></head>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-deep_purple.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <body>
+        <a href = "{{url_for('RestaurantMenu', restaurant_id=restaurant_id)}}"> 
+<button style="float: right; margin-right: 20px;" class="mdl-button mdl-js-button mdl-button--icon">
+  <i class="material-icons">clear</i>
+    </button>
+    </a>
+        <center><h1 style="font-family: 'Lobster', cursive;">Edit {{item.name}} In {{restaurant.name}}</h1></center>
+        <center>
+        <form action="{{url_for('editMenuItem',restaurant_id=restaurant_id,MenuID=MenuID)}}" method="POST">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input required class="mdl-textfield__input" type="text" name='name' id='name' value="{{item.name}}">
+                <label class="mdl-textfield__label" for="name">Name of item</label>
+            </div></br>
     
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <textarea required class="mdl-textfield__input" row=5 type="text" name='description' id='description'>{{item.description}}</textarea>
+                <label class="mdl-textfield__label" for="description">Add Description</label>
+            </div>
+            <br>
     
-    
-    
+            
+            
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input required class="mdl-textfield__input" type="text" name='price' id='price' value="{{item.price}}">
+                <label class="mdl-textfield__label" for="price">Price</label>
+            </div>
+            <br>
+            
+            
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input required class="mdl-textfield__input" type="text" name='course' id='course' value="{{item.course}}">
+                <label class="mdl-textfield__label" for="course">Course</label>
+            </div>
+            
+            <br>
+            <input required class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" type="submit" value='Create'>
+        </form></center>
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+        
+    </body>
 </html>

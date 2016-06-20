@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <a href = "{{url_for('RestaurantMenu', restaurant_id=restaurant_id)}}"> 
+<button style="float: right; margin-right: 20px;" class="mdl-button mdl-js-button mdl-button--icon">
+  <i class="material-icons">clear</i>
+    </button>
+    </a>
         <center><h1 style="font-family: 'Lobster', cursive;">Add New Item In {{restaurant.name}}</h1></center>
         <center>
         <form action="{{url_for('newMenuItem',restaurant_id=restaurant_id)}}" method="POST">
@@ -14,7 +19,7 @@
                 <input required class="mdl-textfield__input" type="text" name='name' id='name'>
                 <label class="mdl-textfield__label" for="name">Name of item</label>
             </div>
-            <br>
+            <br> 
             
             
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
